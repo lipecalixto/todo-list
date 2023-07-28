@@ -1,0 +1,75 @@
+/* SECTION  */
+
+.section {
+  width: 100%;
+}
+
+.section header {
+  max-width: 46rem;
+  width: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* FORM   */
+
+.newTaskForm {
+  max-width: 46rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: -1.75rem;
+}
+
+
+.newTaskForm input{
+  width: 100%;
+  max-width: 39.875rem;
+  color: var(--gray-100);
+  padding: 1rem;
+  background: var(--gray-500);
+  border: 1px solid var(--gray-700);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.newTaskForm input::placeholder {
+  color: var(--gray-300);
+  font-size: 1rem;
+} 
+
+.newTaskForm input:focus {
+  outline: none;
+  border: 1.5px solid var(--purple-dark);
+  color: var(--gray-100);
+}
+
+.newTaskForm button{
+  max-width: 5.625rem;
+  width: 100%;
+  padding: 1.08rem 1rem;
+  background: var(--blue-dark);
+  color: var(--gray-100);
+  border: 0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: 200ms background-color;
+}
+
+.newTaskForm button:hover {
+  background: var(--blue);
+}
+
+.newTaskForm button img {
+  margin-left: .375rem;
+}
