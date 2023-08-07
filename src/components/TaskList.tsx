@@ -12,6 +12,16 @@ export function TaskList() {
           </button>
         </form>
       </header>
+      <main>
+        <div className={styles.taskInfo}>
+          <span className={styles.taskCreated}>
+            Tarefas Criadas <span className={styles.taskInfoCount}> 0 </span>
+          </span>
+          <span className={styles.taskCompleted}>
+            Concluídas <span className={styles.taskInfoCount}> 0 </span>
+          </span>
+        </div>
+      </main>
     </section>
   )
 }
