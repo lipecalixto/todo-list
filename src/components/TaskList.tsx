@@ -1,5 +1,6 @@
 import styles from './TaskList.module.css'
 import addButton from '../assets/plus.svg'
+import empty from '../assets/emptyList.svg'
 
 export function TaskList() {
   return (
@@ -21,6 +22,12 @@ export function TaskList() {
             Concluídas <span className={styles.taskInfoCount}> 0 </span>
           </span>
         </div>
+
+        <section className={styles.emptyTasks}>
+          <img src={empty} alt="todo vazio" />
+          <strong>Você ainda não tem tarefas cadastradas</strong>
+          <p>Crie tarefas e organize seus itens a fazer</p>
+        </section>
       </main>
     </section>
   )
