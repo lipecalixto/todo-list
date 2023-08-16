@@ -1,3 +1,5 @@
+import { Trash, Check } from 'phosphor-react'
+
 import styles from './Task.module.css'
 
 interface Props {
@@ -6,5 +8,17 @@ interface Props {
 }
 
 export function Task({ name }: Props) {
-  return <p>{name}</p>
+  return (
+    <>
+      <div className={styles.container}>
+        <span>
+          <Check size={14} />
+        </span>
+        <span>{name}</span>
+        <span>
+          <Trash size={14} />
+        </span>
+      </div>
+    </>
+  )
 }
