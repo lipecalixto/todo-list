@@ -1,6 +1,7 @@
 import styles from './TaskList.module.css'
 import addButton from '../assets/plus.svg'
 import empty from '../assets/emptyList.svg'
+import { Task } from './Task'
 
 export function TaskList() {
   const tasks = [
@@ -41,11 +42,23 @@ export function TaskList() {
           </span>
         </div>
 
-        <section className={styles.emptyTasks}>
-          <img src={empty} alt="todo vazio" />
-          <strong>Você ainda não tem tarefas cadastradas</strong>
-          <p>Crie tarefas e organize seus itens a fazer</p>
-        </section>
+        {tasks.length ? (
+          <section className={styles.listTasks}>
+            <ul>
+              {tasks.map(({ id, name, fineshed }) => (
+                <li key={id}>
+                  <Task name={name} fineshed={fineshed} />
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : (
+          <section className={styles.emptyTasks}>
+            <img src={empty} alt="todo vazio" />
+            <strong>Você ainda não tem tarefas cadastradas</strong>
+            <p>Crie tarefas e organize seus itens a fazer</p>
+          </section>
+        )}
       </main>
     </section>
   )
