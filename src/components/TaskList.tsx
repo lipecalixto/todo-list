@@ -3,6 +3,24 @@ import addButton from '../assets/plus.svg'
 import empty from '../assets/emptyList.svg'
 
 export function TaskList() {
+  const tasks = [
+    {
+      id: '1',
+      name: 'task 1',
+      fineshed: false,
+    },
+    {
+      id: '2',
+      name: 'task 2',
+      fineshed: false,
+    },
+    {
+      id: '3',
+      name: 'task 3',
+      fineshed: false,
+    },
+  ]
+
   return (
     <section className={styles.section}>
       <header>

@@ -113,12 +113,8 @@
 
   color: var(--gray-200);
 }
-/* 
-section {
-  width: 100%;
-}
 
-.tasksEmpty {
+.emptyTasks {
   max-height: 25rem;
   width: 100%;
   text-align: center;
@@ -130,18 +126,18 @@ section {
   border-radius: 8px;
 }
 
-.tasksEmpty img {
+.emptyTasks img {
   margin-top: 3.5rem;
 }
 
-.tasksEmpty strong {
+.emptyTasks strong {
   margin-top: 2rem;
   font-size: 1.2rem;
   color: var(--gray-300);
   line-height: 0.5;
 }
 
-.tasksEmpty p {
+.emptyTasks p {
   margin-top: 1rem;
   color: var(--gray-300);
-} */
+}
