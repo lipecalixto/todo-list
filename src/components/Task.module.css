@@ -9,6 +9,7 @@
   padding: 1rem 1rem;
 }
 
+
 .labelCheckboxMarked {
   display: block;
   margin-top: 3px;
@@ -59,4 +60,15 @@
 
 .checkboxUnmarked {
   display: none;
+}
+
+
+.trash {
+  cursor: pointer;
+}
+
+.trash:hover {
+  background: var(--gray-400);
+  border-radius: 5px;
+  color: var(--red-danger);
 }

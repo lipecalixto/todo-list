@@ -17,12 +17,12 @@ export function Task({ name, finished }: Props) {
           }
         >
           <span className={finished ? '' : styles.checkboxUnmarked}>
-            <Check size={12} />
+            <Check size={14} />
           </span>
         </span>
         <span>{name}</span>
-        <span>
-          <Trash size={12} />
+        <span className={styles.trash}>
+          <Trash size={14} />
         </span>
       </div>
     </>
