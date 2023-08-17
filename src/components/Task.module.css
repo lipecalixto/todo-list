@@ -8,3 +8,55 @@
   margin-bottom: 1rem;
   padding: 1rem 1rem;
 }
+
+.labelCheckboxMarked {
+  display: block;
+  margin-top: 3px;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 0;
+  background: var(--purple-dark);
+  border-radius: 50%;
+  cursor: pointer;
+  text-align: center;
+
+  transition: background-color 100ms;
+
+  color: var(--gray-100);
+}
+
+.labelCheckboxMarked:hover{
+  background: var(--purple);
+  color: var(--gray-100);
+}
+
+.labelCheckboxMarked input {
+  display: none;
+}
+
+.labelCheckboxUnmarked {
+  display: block;
+  margin-top: 3px;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 2px solid var(--blue);
+  border-radius: 50%;
+  cursor: pointer;
+  text-align: center;
+
+  transition: background-color 100ms;
+}
+
+.labelCheckboxUnmarked:hover{
+  background: var(--gray-400) ;
+  border: 2px solid var(--blue-dark);
+  color: var(--gray-300);
+}
+
+.labelCheckboxUnmarked input {
+  display: none;
+}
+
+.checkboxUnmarked {
+  display: none;
+}

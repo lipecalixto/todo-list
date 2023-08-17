@@ -8,17 +8,17 @@ export function TaskList() {
     {
       id: '1',
       name: 'task 1',
-      fineshed: false,
+      finished: false,
     },
     {
       id: '2',
       name: 'task 2',
-      fineshed: false,
+      finished: false,
     },
     {
       id: '3',
       name: 'task 3',
-      fineshed: false,
+      finished: true,
     },
   ]
 
@@ -45,9 +45,9 @@ export function TaskList() {
         {tasks.length ? (
           <section className={styles.listTasks}>
             <ul>
-              {tasks.map(({ id, name, fineshed }) => (
+              {tasks.map(({ id, name, finished }) => (
                 <li key={id}>
-                  <Task name={name} fineshed={fineshed} />
+                  <Task name={name} finished={finished} />
                 </li>
               ))}
             </ul>
