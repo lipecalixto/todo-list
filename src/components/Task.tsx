@@ -20,7 +20,11 @@ export function Task({ name, finished }: Props) {
             <Check size={14} />
           </span>
         </span>
-        <span>{name}</span>
+
+        <div className={finished ? styles.textMarked : styles.textUnmarked}>
+          <p>{name}</p>
+        </div>
+
         <span className={styles.trash}>
           <Trash size={14} />
         </span>
