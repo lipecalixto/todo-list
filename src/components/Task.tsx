@@ -5,6 +5,7 @@ import styles from './Task.module.css'
 interface Props {
   name: string
   finished: boolean
+  key: string
 }
 
 export function Task({ name, finished }: Props) {

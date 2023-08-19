@@ -2,31 +2,46 @@ import styles from './TaskList.module.css'
 import addButton from '../assets/plus.svg'
 import empty from '../assets/emptyList.svg'
 import { Task } from './Task'
+import { useState, FormEvent, ChangeEvent } from 'react'
+import { v4 as uuidv4 } from 'uuid'
+
+interface Task {
+  id: string
+  name: string
+  finished: boolean
+}
 
 export function TaskList() {
-  const tasks = [
-    {
-      id: '1',
-      name: 'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
+  const [tasks, setTasks] = useState<Task[]>([])
+
+  const [taskName, setTaskName] = useState('')
+
+  function handleCreateNewTask(event: FormEvent) {
+    event.preventDefault()
+
+    const newTask = {
+      id: uuidv4(),
+      name: taskName,
       finished: false,
-    },
-    {
-      id: '2',
-      name: 'task 2',
-      finished: false,
-    },
-    {
-      id: '3',
-      name: 'task 3',
-      finished: true,
-    },
-  ]
+    }
+    setTasks([newTask, ...tasks])
+    setTaskName('')
+  }
+
+  function handleNewTaskChange(event: ChangeEvent<HTMLInputElement>) {
+    event.target.setCustomValidity('')
+    setTaskName(event.target.value)
+  }
 
   return (
     <section className={styles.section}>
       <header>
-        <form className={styles.newTaskForm}>
-          <input type="text" placeholder="Adicione uma nova tarefa" />
+        <form onSubmit={handleCreateNewTask} className={styles.newTaskForm}>
+          <input
+            type="text"
+            placeholder="Adicione uma nova tarefa"
+            onChange={handleNewTaskChange}
+          />
           <button>
             Criar <img src={addButton} alt="Adicionar tarefa" />
           </button>
@@ -47,7 +62,7 @@ export function TaskList() {
             <ul>
               {tasks.map(({ id, name, finished }) => (
                 <li key={id}>
-                  <Task name={name} finished={finished} />
+                  <Task key={id} name={name} finished={finished} />
                 </li>
               ))}
             </ul>
