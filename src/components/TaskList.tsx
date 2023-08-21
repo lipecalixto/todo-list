@@ -2,7 +2,7 @@ import styles from './TaskList.module.css'
 import addButton from '../assets/plus.svg'
 import empty from '../assets/emptyList.svg'
 import { Task } from './Task'
-import { useState, FormEvent, ChangeEvent } from 'react'
+import { useState, FormEvent, ChangeEvent, useEffect } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 
 interface Task {
@@ -15,6 +15,7 @@ export function TaskList() {
   const [tasks, setTasks] = useState<Task[]>([])
 
   const [taskName, setTaskName] = useState('')
+  const [taskFineshed, setTaskFineshed] = useState(0)
 
   function handleCreateNewTask(event: FormEvent) {
     event.preventDefault()
@@ -46,6 +47,14 @@ export function TaskList() {
     setTasks(updatedTasks)
   }
 
+  useEffect(() => {
+    const TaskFineshed = tasks.reduce((count, task) => {
+      return task.finished ? count + 1 : count
+    }, 0)
+
+    setTaskFineshed(TaskFineshed)
+  }, [tasks])
+
   return (
     <section className={styles.section}>
       <header>
@@ -64,10 +73,14 @@ export function TaskList() {
       <main>
         <div className={styles.taskInfo}>
           <span className={styles.taskCreated}>
-            Tarefas Criadas <span className={styles.taskInfoCount}> 0 </span>
+            Tarefas Criadas
+            <span className={styles.taskInfoCount}> {tasks.length} </span>
           </span>
           <span className={styles.taskCompleted}>
-            Concluídas <span className={styles.taskInfoCount}> 0 </span>
+            Concluídas
+            <span className={styles.taskInfoCount}>
+              {taskFineshed > 0 ? `${taskFineshed} de ${tasks.length}` : 0}
+            </span>
           </span>
         </div>
 
