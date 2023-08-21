@@ -5,10 +5,15 @@ import styles from './Task.module.css'
 interface Props {
   name: string
   finished: boolean
-  key: string
+  id: string
+  onDeleteTask: (id: string) => void
 }
 
-export function Task({ name, finished }: Props) {
+export function Task({ id, name, finished, onDeleteTask }: Props) {
+  function handleDeleteTask() {
+    onDeleteTask(id)
+  }
+
   return (
     <>
       <div className={styles.container}>
@@ -26,7 +31,7 @@ export function Task({ name, finished }: Props) {
           <p>{name}</p>
         </div>
 
-        <span className={styles.trash}>
+        <span onClick={handleDeleteTask} className={styles.trash}>
           <Trash size={14} />
         </span>
       </div>

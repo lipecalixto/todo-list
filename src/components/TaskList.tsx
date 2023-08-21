@@ -33,6 +33,11 @@ export function TaskList() {
     setTaskName(event.target.value)
   }
 
+  function deleteTask(id: string) {
+    const updatedTasks = tasks.filter((task) => task.id !== id)
+    setTasks(updatedTasks)
+  }
+
   return (
     <section className={styles.section}>
       <header>
@@ -41,6 +46,7 @@ export function TaskList() {
             type="text"
             placeholder="Adicione uma nova tarefa"
             onChange={handleNewTaskChange}
+            value={taskName}
           />
           <button>
             Criar <img src={addButton} alt="Adicionar tarefa" />
@@ -62,7 +68,12 @@ export function TaskList() {
             <ul>
               {tasks.map(({ id, name, finished }) => (
                 <li key={id}>
-                  <Task key={id} name={name} finished={finished} />
+                  <Task
+                    id={id}
+                    name={name}
+                    finished={finished}
+                    onDeleteTask={deleteTask}
+                  />
                 </li>
               ))}
             </ul>
