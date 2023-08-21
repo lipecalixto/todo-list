@@ -7,17 +7,29 @@ interface Props {
   finished: boolean
   id: string
   onDeleteTask: (id: string) => void
+  onUpdateFinishedTask: (id: string, finished: boolean) => void
 }
 
-export function Task({ id, name, finished, onDeleteTask }: Props) {
+export function Task({
+  id,
+  name,
+  finished,
+  onDeleteTask,
+  onUpdateFinishedTask,
+}: Props) {
   function handleDeleteTask() {
     onDeleteTask(id)
+  }
+
+  function handleUpdateFinishedTask() {
+    onUpdateFinishedTask(id, !finished)
   }
 
   return (
     <>
       <div className={styles.container}>
         <span
+          onClick={handleUpdateFinishedTask}
           className={
             finished ? styles.labelCheckboxMarked : styles.labelCheckboxUnmarked
           }

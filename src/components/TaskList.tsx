@@ -38,6 +38,14 @@ export function TaskList() {
     setTasks(updatedTasks)
   }
 
+  function updateFinishedTask(id: string, finished: boolean) {
+    const updatedTasks = tasks.map((task) =>
+      task.id === id ? { ...task, finished } : task,
+    )
+
+    setTasks(updatedTasks)
+  }
+
   return (
     <section className={styles.section}>
       <header>
@@ -73,6 +81,7 @@ export function TaskList() {
                     name={name}
                     finished={finished}
                     onDeleteTask={deleteTask}
+                    onUpdateFinishedTask={updateFinishedTask}
                   />
                 </li>
               ))}
