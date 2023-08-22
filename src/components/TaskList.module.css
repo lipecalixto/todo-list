@@ -85,13 +85,13 @@
 
 .taskInfo .taskCreated {
   color: var(--blue);
-  font-size: 1rem;
+  font-size: 0.9rem;
+  padding: 0.2rem;
 }
 
 
 .taskInfo .taskCompleted {
-  margin-left: 8px;
-  padding: 0.2rem 0.6rem;
+  padding: 0.rem;
   font-size: 0.9rem;
   color: var(--purple);
   border-radius: 16px;
@@ -105,12 +105,12 @@
   gap: .625rem; 
 
   background: var(--gray-400);
-  border-radius: 999px;
+  border-radius: 8px;
 
   font-family: 'Inter';
   font-size: .75rem;
   line-height: .9375rem;
-
+  margin-left: .0625rem;
   color: var(--gray-200);
 }
 

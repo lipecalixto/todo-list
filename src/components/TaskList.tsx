@@ -74,7 +74,7 @@ export function TaskList() {
         <div className={styles.taskInfo}>
           <span className={styles.taskCreated}>
             Tarefas Criadas
-            <span className={styles.taskInfoCount}> {tasks.length} </span>
+            <span className={styles.taskInfoCount}>{tasks.length}</span>
           </span>
           <span className={styles.taskCompleted}>
             Concluídas
