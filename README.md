@@ -4,7 +4,7 @@
 
 ## Sobre
 Projeto foi realizado no curso no link: [https://www.rocketseat.com.br/ignite](https://www.rocketseat.com.br/ignite)
-Objetivo do projeto: Um projeto inicial focado nos fundamentos do ReactJS, com o objetivo de fazer uma lista de tarefas Dinâmicas.
+Objetivo do projeto:  projeto focado nos fundamentos do ReactJS, com o objetivo de fazer uma lista de tarefas Dinâmicas.
 
 ## Para testar em sua maquina
 
